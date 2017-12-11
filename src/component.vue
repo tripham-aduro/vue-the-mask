@@ -1,5 +1,5 @@
 <template>
-<input type="text" v-mask="config" :value="display" @input="onInput" />
+<input type="text" v-mask="config" :value="display" @input="onInput" @blur="onBlur()" />
 </template>
 
 <script>
@@ -22,6 +22,11 @@ export default {
     tokens: {
       type: Object,
       default: () => tokens
+    },
+    onBlur: {
+      default: () => {
+        console.log('blur function not found')
+      }
     }
   },
   directives: {mask},
